@@ -1,11 +1,8 @@
----
-title: "Marketing Research of Brazilian Ecommerce"
-author: "Andrew Pierson"
-date: "May 4, 2019"
-output: 
-  html_document:
-    keep_md: true
----
+
+# Marketing Research of Brazilian Ecommerce
+### Author: "Andrew Pierson"
+### Date: "May 4, 2019"
+
 
 ## Exploratory Data Analysis
 
@@ -209,105 +206,6 @@ str(productattributes)
 ##  - attr(*, "groups")=Classes 'tbl_df', 'tbl' and 'data.frame':	32134 obs. of  2 variables:
 ##   ..$ product_id: Factor w/ 32951 levels "00066f42aeeb9f3007548bb9d3f33c38",..: 1 2 3 4 5 6 7 8 9 10 ...
 ##   ..$ .rows     :List of 32134
-##   .. ..$ : int 1
-##   .. ..$ : int 2
-##   .. ..$ : int 3
-##   .. ..$ : int 4
-##   .. ..$ : int 5
-##   .. ..$ : int 6
-##   .. ..$ : int 7
-##   .. ..$ : int 8
-##   .. ..$ : int 9
-##   .. ..$ : int 10
-##   .. ..$ : int 11
-##   .. ..$ : int 12
-##   .. ..$ : int 13
-##   .. ..$ : int 14
-##   .. ..$ : int 15
-##   .. ..$ : int 16
-##   .. ..$ : int 17
-##   .. ..$ : int 18
-##   .. ..$ : int 19
-##   .. ..$ : int 20
-##   .. ..$ : int 21
-##   .. ..$ : int 22
-##   .. ..$ : int 23
-##   .. ..$ : int 24
-##   .. ..$ : int 25
-##   .. ..$ : int 26
-##   .. ..$ : int 27
-##   .. ..$ : int 28
-##   .. ..$ : int 29
-##   .. ..$ : int 30
-##   .. ..$ : int 31
-##   .. ..$ : int 32
-##   .. ..$ : int 33
-##   .. ..$ : int 34
-##   .. ..$ : int 35
-##   .. ..$ : int 36
-##   .. ..$ : int 37
-##   .. ..$ : int 38
-##   .. ..$ : int 39
-##   .. ..$ : int 40
-##   .. ..$ : int 41
-##   .. ..$ : int 42
-##   .. ..$ : int 43
-##   .. ..$ : int 44
-##   .. ..$ : int 45
-##   .. ..$ : int 46
-##   .. ..$ : int 47
-##   .. ..$ : int 48
-##   .. ..$ : int 49
-##   .. ..$ : int 50
-##   .. ..$ : int 51
-##   .. ..$ : int 52
-##   .. ..$ : int 53
-##   .. ..$ : int 54
-##   .. ..$ : int 55
-##   .. ..$ : int 56
-##   .. ..$ : int 57
-##   .. ..$ : int 58
-##   .. ..$ : int 59
-##   .. ..$ : int 60
-##   .. ..$ : int 61
-##   .. ..$ : int 62
-##   .. ..$ : int 63
-##   .. ..$ : int 64
-##   .. ..$ : int 65
-##   .. ..$ : int 66
-##   .. ..$ : int 67
-##   .. ..$ : int 68
-##   .. ..$ : int 69
-##   .. ..$ : int 70
-##   .. ..$ : int 71
-##   .. ..$ : int 72
-##   .. ..$ : int 73
-##   .. ..$ : int 74
-##   .. ..$ : int 75
-##   .. ..$ : int 76
-##   .. ..$ : int 77
-##   .. ..$ : int 78
-##   .. ..$ : int 79
-##   .. ..$ : int 80
-##   .. ..$ : int 81
-##   .. ..$ : int 82
-##   .. ..$ : int 83
-##   .. ..$ : int 84
-##   .. ..$ : int 85
-##   .. ..$ : int 86
-##   .. ..$ : int 87
-##   .. ..$ : int 88
-##   .. ..$ : int 89
-##   .. ..$ : int 90
-##   .. ..$ : int 91
-##   .. ..$ : int 92
-##   .. ..$ : int 93
-##   .. ..$ : int 94
-##   .. ..$ : int 95
-##   .. ..$ : int 96
-##   .. ..$ : int 97
-##   .. ..$ : int 98
-##   .. ..$ : int 99
 ##   .. .. [list output truncated]
 ##   ..- attr(*, ".drop")= logi TRUE
 ```
@@ -377,7 +275,7 @@ numeric.complete <- NbClust(productattributes.numeric, distance = "euclidean",
     min.nc = 2, max.nc = 10, method = "complete", index = "all")
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-1.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-1.png)<!-- -->
 
 ```
 ## *** : The Hubert index is a graphical method of determining the number of clusters.
@@ -387,7 +285,7 @@ numeric.complete <- NbClust(productattributes.numeric, distance = "euclidean",
 ## 
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-2.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-2.png)<!-- -->
 
 ```
 ## *** : The D index is a graphical method of determining the number of clusters. 
@@ -434,7 +332,7 @@ numeric.wards <- NbClust(productattributes.numeric, distance = "euclidean",
     min.nc = 2, max.nc = 10, method = "ward.D2", index = "all")
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-3.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-3.png)<!-- -->
 
 ```
 ## *** : The Hubert index is a graphical method of determining the number of clusters.
@@ -444,7 +342,7 @@ numeric.wards <- NbClust(productattributes.numeric, distance = "euclidean",
 ## 
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-4.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-4.png)<!-- -->
 
 ```
 ## *** : The D index is a graphical method of determining the number of clusters. 
@@ -491,7 +389,7 @@ numeric.kmeans <- NbClust(productattributes.numeric, distance = "euclidean",
     min.nc = 2, max.nc = 10, method = "kmeans", index = "all")
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-5.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-5.png)<!-- -->
 
 ```
 ## *** : The Hubert index is a graphical method of determining the number of clusters.
@@ -501,7 +399,7 @@ numeric.kmeans <- NbClust(productattributes.numeric, distance = "euclidean",
 ## 
 ```
 
-![](Final_files/figure-html/Numeric Cluster Analysis-6.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Numeric%20Cluster%20Analysis-6.png)<!-- -->
 
 ```
 ## *** : The D index is a graphical method of determining the number of clusters. 
@@ -749,7 +647,7 @@ inspect(ecommerce.transactions[1:10])
 itemFrequencyPlot(ecommerce.transactions, topN = 20, type = "absolute")
 ```
 
-![](Final_files/figure-html/Market Basket Analysis-1.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Market%20Basket%20Analysis-1.png)<!-- -->
 
 ```r
 # Create apriori rules
@@ -819,7 +717,7 @@ summary(ecommercerules)
 
 ```r
 # Inspect the top 10 rules
-inspect(ecommercerules[1:50])
+inspect(ecommercerules[1:10])
 ```
 
 ```
@@ -834,97 +732,6 @@ inspect(ecommercerules[1:50])
 ## [8]  {}  => {furniture_mattress_and_upholstery}       0.0003821323
 ## [9]  {}  => {music}                                   0.0003821323
 ## [10] {}  => {party_supplies}                          0.0003921884
-## [11] {}  => {fashio_female_clothing}                  0.0003921884
-## [12] {}  => {books_imported}                          0.0005329740
-## [13] {}  => {dvds_blu_ray}                            0.0005933107
-## [14] {}  => {cine_photo}                              0.0006536474
-## [15] {}  => {small_appliances_home_oven_and_coffee}   0.0007542085
-## [16] {}  => {tablets_printing_image}                  0.0007944329
-## [17] {}  => {furniture_bedroom}                       0.0009553307
-## [18] {}  => {costruction_tools_tools}                 0.0009754430
-## [19] {}  => {fashion_male_clothing}                   0.0011262847
-## [20] {}  => {fashion_underwear_beach}                 0.0012167897
-## [21] {}  => {christmas_supplies}                      0.0012871825
-## [22] {}  => {signaling_and_security}                  0.0014078558
-## [23] {}  => {construction_tools_safety}               0.0016793709
-## [24] {}  => {computers}                               0.0018201565
-## [25] {}  => {agro_industry_and_commerce}              0.0018302126
-## [26] {}  => {costruction_tools_garden}                0.0019508859
-## [27] {}  => {art}                                     0.0020313348
-## [28] {}  => {fixed_telephony}                         0.0021821765
-## [29] {}  => {food_drink}                              0.0022827377
-## [30] {}  => {home_appliances_2}                       0.0023531305
-## [31] {}  => {industry_commerce_and_business}          0.0023631866
-## [32] {}  => {fashion_shoes}                           0.0024134671
-## [33] {}  => {kitchen_dining_laundry_garden_furniture} 0.0024939161
-## [34] {}  => {construction_tools_lights}               0.0024536916
-## [35] {}  => {air_conditioning}                        0.0025441966
-## [36] {}  => {books_technical}                         0.0026145894
-## [37] {}  => {market_place}                            0.0028157117
-## [38] {}  => {drinks}                                  0.0029866656
-## [39] {}  => {audio}                                   0.0035196396
-## [40] {}  => {home_confort}                            0.0039922769
-## [41] {}  => {furniture_living_room}                   0.0042436797
-## [42] {}  => {food}                                    0.0045252509
-## [43] {}  => {home_construction}                       0.0049274954
-## [44] {}  => {books_general_interest}                  0.0051487299
-## [45] {}  => {musical_instruments}                     0.0063152390
-## [46] {}  => {small_appliances}                        0.0063353513
-## [47] {}  => {construction_tools_construction}         0.0075219726
-## [48] {}  => {home_appliances}                         0.0076828704
-## [49] {}  => {luggage_accessories}                     0.0103980210
-## [50] {}  => {consoles_games}                          0.0106795921
-##      confidence   lift count
-## [1]  0.0001206734 1      12 
-## [2]  0.0001307295 1      13 
-## [3]  0.0002312906 1      23 
-## [4]  0.0002413467 1      24 
-## [5]  0.0002715151 1      27 
-## [6]  0.0002715151 1      27 
-## [7]  0.0002916273 1      29 
-## [8]  0.0003821323 1      38 
-## [9]  0.0003821323 1      38 
-## [10] 0.0003921884 1      39 
-## [11] 0.0003921884 1      39 
-## [12] 0.0005329740 1      53 
-## [13] 0.0005933107 1      59 
-## [14] 0.0006536474 1      65 
-## [15] 0.0007542085 1      75 
-## [16] 0.0007944329 1      79 
-## [17] 0.0009553307 1      95 
-## [18] 0.0009754430 1      97 
-## [19] 0.0011262847 1     112 
-## [20] 0.0012167897 1     121 
-## [21] 0.0012871825 1     128 
-## [22] 0.0014078558 1     140 
-## [23] 0.0016793709 1     167 
-## [24] 0.0018201565 1     181 
-## [25] 0.0018302126 1     182 
-## [26] 0.0019508859 1     194 
-## [27] 0.0020313348 1     202 
-## [28] 0.0021821765 1     217 
-## [29] 0.0022827377 1     227 
-## [30] 0.0023531305 1     234 
-## [31] 0.0023631866 1     235 
-## [32] 0.0024134671 1     240 
-## [33] 0.0024939161 1     248 
-## [34] 0.0024536916 1     244 
-## [35] 0.0025441966 1     253 
-## [36] 0.0026145894 1     260 
-## [37] 0.0028157117 1     280 
-## [38] 0.0029866656 1     297 
-## [39] 0.0035196396 1     350 
-## [40] 0.0039922769 1     397 
-## [41] 0.0042436797 1     422 
-## [42] 0.0045252509 1     450 
-## [43] 0.0049274954 1     490 
-## [44] 0.0051487299 1     512 
-## [45] 0.0063152390 1     628 
-## [46] 0.0063353513 1     630 
-## [47] 0.0075219726 1     748 
-## [48] 0.0076828704 1     764 
-## [49] 0.0103980210 1    1034 
-## [50] 0.0106795921 1    1062
 ```
 
 ```r
@@ -941,7 +748,7 @@ newRules <- ecommercerules[70:81]
 plot(newRules, method = "graph")
 ```
 
-![](Final_files/figure-html/Market Basket Analysis-2.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Market%20Basket%20Analysis-2.png)<!-- -->
 
 
 ## Geospatial Analysis
@@ -1121,7 +928,7 @@ choro.legend(-83.77, 37.87, sleep.shade, fmt = "%6.2f", title = "Local Moran's I
 title("\r\nRevenue by State (Local Moran's I)", cex.main = 1)
 ```
 
-![](Final_files/figure-html/Geospatial Analysis-2.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Geospatial%20Analysis-2.png)<!-- -->
 
 ```r
 # Simplify data to get average freight value by state
@@ -1137,7 +944,7 @@ tm_shape(freightmap) + tm_polygons("Average Freight Value", id = "NAME", palette
     legend.title = "Average Freight Value")
 ```
 
-![](Final_files/figure-html/Geospatial Analysis-3.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Geospatial%20Analysis-3.png)<!-- -->
 
 ```r
 # GEOSPATIAL CLUSTER ANALYSIS FOR FREIGHT VALUE
@@ -1160,7 +967,7 @@ choro.legend(-83.77, 37.87, sleep.shade, fmt = "%6.2f", title = "Local Moran's I
 title("\r\nFreight Value by State (Local Moran's I)", cex.main = 1)
 ```
 
-![](Final_files/figure-html/Geospatial Analysis-4.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Geospatial%20Analysis-4.png)<!-- -->
 
 ```r
 # Geographically weighted regression Set a random seed start
@@ -1360,28 +1167,6 @@ optimal.band <- gwr.sel(finalsampledf$product_revenue ~ finalsampledf$avg_weight
 
 ```
 ## Adaptive q: 0.381966 CV score: 478716119 
-## Adaptive q: 0.618034 CV score: 474272726 
-## Adaptive q: 0.763932 CV score: 473203729 
-## Adaptive q: 0.812712 CV score: 472959449 
-## Adaptive q: 0.8842497 CV score: 472742988 
-## Adaptive q: 0.9403246 CV score: 472379676 
-## Adaptive q: 0.9631186 CV score: 472218047 
-## Adaptive q: 0.977206 CV score: 472209732 
-## Adaptive q: 0.9718367 CV score: 472233138 
-## Adaptive q: 0.9859125 CV score: 472118004 
-## Adaptive q: 0.9912935 CV score: 472102122 
-## Adaptive q: 0.9913441 CV score: 472101281 
-## Adaptive q: 0.9946504 CV score: 472024824 
-## Adaptive q: 0.9966937 CV score: 472030489 
-## Adaptive q: 0.9953857 CV score: 472012550 
-## Adaptive q: 0.9955789 CV score: 472009762 
-## Adaptive q: 0.9960047 CV score: 472004839 
-## Adaptive q: 0.9962679 CV score: 472015220 
-## Adaptive q: 0.9958421 CV score: 472006216 
-## Adaptive q: 0.9961053 CV score: 472008895 
-## Adaptive q: 0.9959462 CV score: 472004887 
-## Adaptive q: 0.9960454 CV score: 472006495 
-## Adaptive q: 0.9960047 CV score: 472004839
 ```
 
 ```r
@@ -1398,16 +1183,4 @@ optimal.band
 gwr.res10 <- gwr.basic(finalsampledf@data$product_revenue ~ finalsampledf@data$avg_weight + 
     finalsampledf@data$product_description_lenght + finalsampledf@data$avg_payments, 
     data = finalsampledf, bw = optimal.band, kernel = "gaussian")
-```
-
-```
-## Error in gwr.basic(finalsampledf@data$product_revenue ~ finalsampledf@data$avg_weight + : could not find function "gwr.basic"
-```
-
-```r
-gwr.res10
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'gwr.res10' not found
 ```
