@@ -49,16 +49,16 @@ productattributes <- productreviews %>% na.omit(product_id) %>% group_by(product
     avg_freight_value = mean(freight_value), total_freight_value = sum(freight_value), 
     avg_review_score = mean(review_score), avg_weight = mean(product_weight_g), 
     avg_photo_qty = mean(product_photos_qty), avg_payments = mean(payment_installments)) %>% 
-    left_join(products, by = "product_id") %>% left_join(translation, by = c(product_category_name = "ï..product_category_name"))  #%>% select(-c('product_category_name'))
+    left_join(products, by = "product_id") %>% left_join(translation, by = c(product_category_name = "Ã¯..product_category_name"))  #%>% select(-c('product_category_name'))
 
 
 # Rename seller states
 sellers$seller_state <- plyr::revalue(sellers$seller_state, c(AC = "Acre", AM = "Amazonas", 
-    BA = "Bahia", CE = "Ceará", DF = "Distrito Federal", ES = "Espírito Santo", 
-    GO = "Goiás", MA = "Maranhão", MG = "Minas Gerais", MS = "Mato Grosso do Sul", 
-    MT = "Mato Grosso", PA = "Pará", PB = "Paraíba", PE = "Pernambuco", PI = "Piauí", 
-    PR = "Paraná", RJ = "Rio de Janeiro", RN = "Rio Grande do Norte", RO = "Rondônia", 
-    RS = "Rio Grande do Sul", SC = "Santa Catarina", SE = "Sergipe", SP = "São Paulo"))
+    BA = "Bahia", CE = "CearÃ¡", DF = "Distrito Federal", ES = "EspÃ­rito Santo", 
+    GO = "GoiÃ¡s", MA = "MaranhÃ£o", MG = "Minas Gerais", MS = "Mato Grosso do Sul", 
+    MT = "Mato Grosso", PA = "ParÃ¡", PB = "ParaÃ­ba", PE = "Pernambuco", PI = "PiauÃ­", 
+    PR = "ParanÃ¡", RJ = "Rio de Janeiro", RN = "Rio Grande do Norte", RO = "RondÃ´nia", 
+    RS = "Rio Grande do Sul", SC = "Santa Catarina", SE = "Sergipe", SP = "SÃ£o Paulo"))
 
 # Read in geolocation data
 geolocations <- read.csv("E:/Rockhurst University/WS19/B Term/MK 6460 Marketing Research and Analytics/FInal Project/Tests/geolocations.csv")
@@ -149,8 +149,8 @@ summary(productattributes)
 ##  (Other)        :19888         Max.   :99730         
 ##  NA's           :   11                               
 ##          seller_city               seller_state         X        
-##  sao paulo     : 7856   São Paulo        :23139   Min.   :    1  
-##  ibitinga      : 2264   Paraná           : 3011   1st Qu.: 3465  
+##  sao paulo     : 7856   SÃ£o Paulo        :23139   Min.   :    1  
+##  ibitinga      : 2264   ParanÃ¡           : 3011   1st Qu.: 3465  
 ##  curitiba      : 1113   Minas Gerais     : 2651   Median : 5270  
 ##  rio de janeiro:  848   Rio de Janeiro   : 1497   Mean   : 6749  
 ##  belo horizonte:  715   Santa Catarina   : 1429   3rd Qu.: 8223  
@@ -165,11 +165,11 @@ summary(productattributes)
 ##  Max.   :-34.86   Max.   : -2.501  
 ##  NA's   :63       NA's   :63       
 ##                                                                                       output     
-##  R. José Custódio, 846 - Centro, Ibitinga - SP, 14940-000, Brazil                        : 2264  
-##  R. Sd. Genivaldo José Damasceno, 16 - Cidade Ocian, Praia Grande - SP, 11704-360, Brazil:  316  
-##  Rua Luiz José Duarte, 553 - Jardim Sao Carlos, Sumaré - SP, 13170-001, Brazil           :  296  
-##  R. Dr. Bueno de Azevedo, 120 - Jardim Germania, São Paulo - SP, 05849-270, Brazil       :  267  
-##  R. Anchieta, 1651, Penápolis - SP, 16300-000, Brazil                                    :  266  
+##  R. JosÃ© CustÃ³dio, 846 - Centro, Ibitinga - SP, 14940-000, Brazil                        : 2264  
+##  R. Sd. Genivaldo JosÃ© Damasceno, 16 - Cidade Ocian, Praia Grande - SP, 11704-360, Brazil:  316  
+##  Rua Luiz JosÃ© Duarte, 553 - Jardim Sao Carlos, SumarÃ© - SP, 13170-001, Brazil           :  296  
+##  R. Dr. Bueno de Azevedo, 120 - Jardim Germania, SÃ£o Paulo - SP, 05849-270, Brazil       :  267  
+##  R. Anchieta, 1651, PenÃ¡polis - SP, 16300-000, Brazil                                    :  266  
 ##  (Other)                                                                                 :30145  
 ##  NA's                                                                                    :   63
 ```
@@ -205,7 +205,7 @@ str(productattributes)
 ##  $ X                            : int  1490 5749 5463 16741 17393 1563 5281 104 5463 618 ...
 ##  $ geo_lng                      : num  -46.5 -50.1 -48.8 -53.1 -48.7 ...
 ##  $ geo_lat                      : num  -23.5 -21.4 -21.8 -26 -26.9 ...
-##  $ output                       : Factor w/ 18899 levels "0 - Asa Norte Comércio Local Norte 207 - Asa Norte, Brasília - DF, 70852-520, Brazil",..: 17361 5032 10602 4962 11782 13948 5739 14190 10602 1989 ...
+##  $ output                       : Factor w/ 18899 levels "0 - Asa Norte ComÃ©rcio Local Norte 207 - Asa Norte, BrasÃ­lia - DF, 70852-520, Brazil",..: 17361 5032 10602 4962 11782 13948 5739 14190 10602 1989 ...
 ##  - attr(*, "groups")=Classes 'tbl_df', 'tbl' and 'data.frame':	32134 obs. of  2 variables:
 ##   ..$ product_id: Factor w/ 32951 levels "00066f42aeeb9f3007548bb9d3f33c38",..: 1 2 3 4 5 6 7 8 9 10 ...
 ##   ..$ .rows     :List of 32134
@@ -597,14 +597,14 @@ clustab.complete
 ## ____________________________________________________________________________________________ 
 ##                             1                 2                 3                  4         
 ##                          N=3724             N=245              N=18              N=13        
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯ 
 ## avg_price           135.134 (178.154) 123.868 (119.941) 2176.635 (712.286) 827.368 (333.279) 
 ## avg_freight_value    20.512 (14.613)   22.147 (14.091)   62.144 (33.046)   178.894 (43.716)  
 ## avg_review_score      4.055 (1.205)     4.219 (1.029)     4.222 (1.287)      4.465 (0.621)   
 ## avg_photo_qty         1.848 (1.171)     6.800 (1.989)     3.444 (2.357)      2.846 (2.075)   
 ## avg_payments          3.109 (2.585)     3.045 (2.567)     6.046 (3.948)      7.448 (2.791)   
 ## product_name_lenght  48.150 (10.251)   53.314 (7.930)     51.611 (4.717)    54.462 (5.882)   
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯
 ```
 
 ```r
@@ -623,14 +623,14 @@ clustab.wards
 ## __________________________________________________________________________ 
 ##                             1                 2                  3         
 ##                          N=3969              N=18              N=13        
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯ 
 ## avg_price           134.438 (175.131) 2176.635 (712.286) 827.368 (333.279) 
 ## avg_freight_value    20.613 (14.585)   62.144 (33.046)   178.894 (43.716)  
 ## avg_review_score      4.065 (1.195)     4.222 (1.287)      4.465 (0.621)   
 ## avg_photo_qty         2.154 (1.718)     3.444 (2.357)      2.846 (2.075)   
 ## avg_payments          3.105 (2.584)     6.046 (3.948)      7.448 (2.791)   
 ## product_name_lenght  48.468 (10.198)    51.611 (4.717)    54.462 (5.882)   
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯
 ```
 
 ```r
@@ -649,21 +649,21 @@ clustab.kmeans
 ## ________________________________________________________________________ 
 ##                             1                 2                3         
 ##                           N=251            N=2488            N=1261      
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯ 
 ## avg_price           729.706 (570.412) 110.361 (101.735) 99.751 (105.371) 
 ## avg_freight_value    64.825 (41.813)   18.667 (8.767)    17.876 (9.112)  
 ## avg_review_score      3.871 (1.392)     4.095 (1.154)    4.051 (1.227)   
 ## avg_photo_qty         2.566 (1.872)     2.356 (1.867)    1.699 (1.242)   
 ## avg_payments          6.938 (3.439)     3.008 (2.402)    2.619 (2.171)   
 ## product_name_lenght  48.052 (9.699)    54.606 (4.422)    36.548 (7.402)  
-## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+## Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯Â¯
 ```
 
 
 ## Market Basket Analysis
 
 The initial dataset that was transformed, comprised of the items, products and translations joined to the orders data. The next step to prepare the data was to subset the joined dataset to include the order id and product categories since the product id was not beneficial in the final analysis. The product categories were then factored and grouped by order ids which were separated by commas to create a transactional dataset. This dataset contained 99,442 transactions of 23 variables 13 of which were factor dimensions, 7 numeric dimensions, and 2 numeric dimensions. For this dataset I chose not to filter out the canceled orders because customers still took an interest in certain products and this might provide important insight for sellers if omitted.
-Subsequently, the transactional dataset was read in and the top ten transactions were inspected. The first ten transactions revealed single item purchases. Another step that was taken to explore the transactional dataset was to view the most frequently purchased product categories. The observed transactions showed that bed/bath/table, health/beauty, sports/leisure, computers/accessories, and furniture/décor. This is interesting because a majority of these products are small items and are most likely easy to ship to customers.
+Subsequently, the transactional dataset was read in and the top ten transactions were inspected. The first ten transactions revealed single item purchases. Another step that was taken to explore the transactional dataset was to view the most frequently purchased product categories. The observed transactions showed that bed/bath/table, health/beauty, sports/leisure, computers/accessories, and furniture/dÃ©cor. This is interesting because a majority of these products are small items and are most likely easy to ship to customers.
 The next step in the process of market basket analysis was to create apriori rules for the transactional dataset. The apriori indicated that there were 103 rules with parameters set to a minimum support of 1e-4 and a confidence of 1e-4. The top ten rules indicate that many of the rules are based on single item purchases. The top ten rules were not highly supported by the apriori and gave a small lift, providing minimal information of customer purchase behavior. Sorting the rules by lift gave insight to purchase relationships of items. I found that there were strong associations between customers that purchased home/comfort products also buying bed/bath/table products. Additionally, I observed associations between do-it-yourself improvement products, home and household, and personal enjoyment items. An interesting and particularly comical relationship that I observed was that baby products and products categorized as cool were purchased together. I think this might be a similar relationship that has been studied in other common cases where diapers and beer are purchased together. 
 Based on my analysis of the rules for purchase transactions in the Brazilian E-Commerce dataset, I would recommend that the online sellers encourage customers to purchase multiple items by offering bundling packages. One of the bundles that I might suggest would be to start with some specific items from the bed/bath/table and home/comfort categories due to their association support. To test this marketing campaign, they should consider selling products individually and selling a package deal that contains combinations of the items. This will allow them to study the effects of a small marketing campaign by conducting A/B testing on the controlled group of individuals and the packaged deal. I would also suggest sellers to promote popular household items and electronics because they seem to be a hot seller in the Brazilian market. In addition, I would offer a markdown for buying multiple of the same products during a single transaction. For all these marketing approaches I would make sure that they were targeted towards a specific subset of customers based on location, one method of doing this might be to target advertising geographically.
 
@@ -982,7 +982,7 @@ productattributes <- productreviews %>% na.omit(product_id) %>% group_by(product
     avg_freight_value = mean(freight_value), total_freight_value = sum(freight_value), 
     avg_review_score = mean(review_score), avg_weight = mean(product_weight_g), 
     avg_photo_qty = mean(product_photos_qty), avg_payments = mean(payment_installments)) %>% 
-    left_join(products, by = "product_id") %>% left_join(translation, by = c(product_category_name = "ï..product_category_name"))  #%>% select(-c('product_category_name'))
+    left_join(products, by = "product_id") %>% left_join(translation, by = c(product_category_name = "Ã¯..product_category_name"))  #%>% select(-c('product_category_name'))
 
 # Clean and pinpoint each zip code location geolocations <- geolocation %>%
 # drop_na(geolocation_zip_code_prefix) %>%
@@ -1015,11 +1015,11 @@ sellers$seller_state <- as.character(sellers$seller_state)
 
 # Rename seller states
 sellers$seller_state <- plyr::revalue(sellers$seller_state, c(AC = "Acre", AM = "Amazonas", 
-    BA = "Bahia", CE = "Ceará", DF = "Distrito Federal", ES = "Espírito Santo", 
-    GO = "Goiás", MA = "Maranhão", MG = "Minas Gerais", MS = "Mato Grosso do Sul", 
-    MT = "Mato Grosso", PA = "Pará", PB = "Paraíba", PE = "Pernambuco", PI = "Piauí", 
-    PR = "Paraná", RJ = "Rio de Janeiro", RN = "Rio Grande do Norte", RO = "Rondônia", 
-    RS = "Rio Grande do Sul", SC = "Santa Catarina", SE = "Sergipe", SP = "São Paulo"))
+    BA = "Bahia", CE = "CearÃ¡", DF = "Distrito Federal", ES = "EspÃ­rito Santo", 
+    GO = "GoiÃ¡s", MA = "MaranhÃ£o", MG = "Minas Gerais", MS = "Mato Grosso do Sul", 
+    MT = "Mato Grosso", PA = "ParÃ¡", PB = "ParaÃ­ba", PE = "Pernambuco", PI = "PiauÃ­", 
+    PR = "ParanÃ¡", RJ = "Rio de Janeiro", RN = "Rio Grande do Norte", RO = "RondÃ´nia", 
+    RS = "Rio Grande do Sul", SC = "Santa Catarina", SE = "Sergipe", SP = "SÃ£o Paulo"))
 
 # Join the geolocation data to the product-seller attributes
 final <- productattributes %>% left_join(sellers, by = "seller_id") %>% left_join(geolocations, 
@@ -1098,7 +1098,7 @@ revenuemap <- append_data(brazilstates, revenue3, key.shp = "locname", key.data 
 tm_shape(revenuemap) + tm_polygons("Revenue", id = "seller_state", style = "quantile")
 ```
 
-![](Final_files/figure-html/Geospatial Analysis-1.png)<!-- -->
+![](https://github.com/apierson3/Marketing-Analytics/blob/master/Final_files/figure-html/Geospatial%20Analysis-1.png)<!-- -->
 
 ```r
 # GEOSPATIAL CLUSTER ANALYSIS FOR REVENUE
